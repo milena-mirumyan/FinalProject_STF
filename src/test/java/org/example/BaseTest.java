@@ -28,12 +28,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUpClass() throws MalformedURLException {
-//        FirefoxOptions options = new FirefoxOptions();
-//        String gridHubUrl = "http://localhost:4444/wd/hub";
-//        driver = new RemoteWebDriver(new URL(gridHubUrl), options);
-//        driver.manage().window().maximize();
-//        driver.get("https://www.k5learning.com/free-math-worksheets");
-//        homePage = new HomePage(driver);
         System.setProperty("chromdriver.chrome.driver", "chromedriver-mac-arm64");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -43,9 +37,6 @@ public class BaseTest {
 
     @AfterClass
     public  void tearDownClass() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws IOException {
@@ -58,17 +49,4 @@ public class BaseTest {
         driver.quit();
     }
 
-//     @AfterMethod
-//    public void recordFailure(ITestResult result) {
-//        if (ITestResult.FAILURE == result.getStatus()) {
-//            var camera = (TakesScreenshot)driver;
-//            File screenshot = camera.getScreenshotAs(OutputType.FILE);
-//            try {
-//                Files.move(screenshot, new File("resources/screenshots/" + result.getName() + ".png"));
-//            }
-//            catch(IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
 }
