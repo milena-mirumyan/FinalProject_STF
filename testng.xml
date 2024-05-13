@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SearchValidTests" verbose="1">
+    <test name="SearchValidBook">
+        <parameter name="searchText" value="Decimals"/>
+        <classes>
+            <class name="org.example.BookStoreSearchTest">
+                <methods>
+                    <include name="testSearchValidBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchInvalid">
+        <parameter name="searchText" value="hjbjhv"/>
+        <classes>
+            <class name="org.example.BookStoreSearchTest">
+                <methods>
+                    <include name="testSearchInvalidBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SearchInvalid2">
+        <parameter name="searchText" value="գիրք"/>
+        <classes>
+            <class name="org.example.BookStoreSearchTest">
+                <methods>
+                    <include name="testSearchInvalidBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
